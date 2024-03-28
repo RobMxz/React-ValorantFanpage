@@ -1,0 +1,14 @@
+.footer-list li {
+  font-size: 1.15em;
+  list-style-type: none;
+}
+.footer-list ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  gap: 2em;
+}
+.footer-list {
+  margin: 16px 0 0 0;
+}

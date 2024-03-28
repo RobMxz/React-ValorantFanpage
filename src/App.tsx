@@ -3,6 +3,7 @@ import axios from "axios";
 import NavBar from "./components/NavBar";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import { Divider } from "@chakra-ui/react";
 
 function App() {
   interface Agent {
@@ -77,13 +78,16 @@ function App() {
                   </h2>
                   <p>{agent.description}</p>
                 </div>
-                <div className="Curiosity">
-                  <p>Nombre en la beta {agent.developerName}</p>
-                </div>
+                {agent.developerName !== agent.displayName && (
+                  <div className="Curiosity">
+                    <p>Nombre en la beta {agent.developerName}</p>
+                  </div>
+                )}
               </div>
             );
           })}
       </div>
+      <Divider borderColor="green.300" size="full" variant="dashed" />
       <Footer />
     </>
   );

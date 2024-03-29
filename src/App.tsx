@@ -1,10 +1,10 @@
 import "./App.css";
 import axios from "axios";
-import NavBar from "./components/NavBar";
+import Header from "./components/Header";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import { Divider } from "@chakra-ui/react";
-
+import { Center } from "@chakra-ui/react";
 function App() {
   interface Agent {
     uuid: string;
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <Header />
       <div className="contenedor">
         {agents &&
           agents.map((agent) => {

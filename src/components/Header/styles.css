@@ -1,0 +1,17 @@
+.header li {
+  font-size: 1.15em;
+  list-style-type: none;
+  padding: 15px 0;
+}
+.header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  gap: 5em;
+}
+.header {
+  margin: 1em 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

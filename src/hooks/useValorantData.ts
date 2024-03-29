@@ -38,20 +38,18 @@ const useEventsData = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | undefined | unknown>();
   useEffect(() => {
-    setTimeout(() => {
-      try {
-        axios
-          .get(
-            "https://valorant-api.com/v1/agents?language=es-MX&isPlayableCharacter=true"
-          )
-          .then((response) => {
-            setAgents(response.data.data as Agent[]);
-          });
-        setIsLoading(false);
-      } catch (error) {
-        setError(error);
-      }
-    }, 4000);
+    try {
+      axios
+        .get(
+          "https://valorant-api.com/v1/agents?language=es-MX&isPlayableCharacter=true"
+        )
+        .then((response) => {
+          setAgents(response.data.data as Agent[]);
+        });
+      setIsLoading(false);
+    } catch (error) {
+      setError(error);
+    }
   }, []);
   return { agents: agents || [], isLoading, error };
 };

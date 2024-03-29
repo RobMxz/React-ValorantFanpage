@@ -1,56 +1,10 @@
 import "./App.css";
-import axios from "axios";
 import Header from "./components/Header";
-import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
-import { Divider } from "@chakra-ui/react";
-import { Center } from "@chakra-ui/react";
+import { Divider, Center, Spinner } from "@chakra-ui/react";
+import useValorantData from "./hooks/useValorantData";
 function App() {
-  interface Agent {
-    uuid: string;
-    displayName: string;
-    description: string;
-    developerName: string;
-    characterTags: null;
-    displayIcon: string;
-    displayIconSmall: string;
-    bustPortrait: string;
-    fullPortrait: string;
-    fullPortraitV2: string;
-    killfeedPortrait: string;
-    background: string;
-    backgroundGradientColors: string[];
-    assetPath: string;
-    isFullPortraitRightFacing: boolean;
-    isPlayableCharacter: boolean;
-    isAvailableForTest: boolean;
-    isBaseContent: boolean;
-    role: Role;
-    recruitmentData: null;
-    abilities: string[];
-    voiceLine: null;
-  }
-  interface Role {
-    uuid: string;
-    displayName: string;
-    description: string;
-    displayIcon: string;
-    assetPath: string;
-  }
-  const [agents, setAgents] = useState<Agent[]>([]); // Set initial value to an empty array
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://valorant-api.com/v1/agents?language=es-MX&isPlayableCharacter=true"
-      )
-      .then((response) => {
-        setAgents(response.data.data as Agent[]);
-      });
-  }, []);
-
-  console.log(typeof agents);
-
+  const { agents, isLoading, error } = useValorantData();
   return (
     <>
       <Header />
@@ -87,6 +41,12 @@ function App() {
             );
           })}
       </div>
+      {error && <div>Ha ocurrido un error</div>}
+      {isLoading && (
+        <Center marginBottom={32}>
+          <Spinner size="xl" color="teal.500" thickness="8px" speed="0.65s" />
+        </Center>
+      )}
       <Divider borderColor="green.300" size="full" variant="dashed" />
       <Footer />
     </>

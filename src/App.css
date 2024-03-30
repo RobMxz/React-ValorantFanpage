@@ -68,3 +68,10 @@
 .trapecio li {
   text-align: center;
 }
+@font-face {
+  font-family: "xd";
+  src: url("./fonts/MonaspaceKrypton-Regular.woff");
+}
+.AgentInfo {
+  font-family: "xd";
+}

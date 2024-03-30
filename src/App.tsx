@@ -28,7 +28,6 @@ function App() {
                   padding: "0",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontFamily: "MonaSpace Krypton",
                 }}
               >
                 <div
@@ -73,7 +72,6 @@ function App() {
                     position: "relative",
                   }}
                 >
-                  {/*This div must be a card (component)*/}
                   <h1
                     style={{
                       fontSize: "3rem",

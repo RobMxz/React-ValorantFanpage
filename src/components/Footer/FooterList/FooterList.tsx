@@ -7,26 +7,26 @@ export const FooterList = () => {
     <div className="footer-list">
       <ul>
         <li>
-          <a href="https://facebook.com">© 2024 ValorantFanPage</a>
+          <a href="#">© 2024 ValorantFanPage</a>
         </li>
         <li>
-          <a>Privacy Policy</a>
+          <a href="#">Privacy Policy</a>
         </li>
         <li>
-          <a>Terms of Service</a>
+          <a href="#">Terms of Service</a>
         </li>
         <li>
-          <a>
+          <a href="#">
             <Icon as={IoLogoDiscord} boxSize="1.5em" />
           </a>
         </li>
         <li>
-          <a>
+          <a href="#">
             <Icon as={FaGithub} boxSize="1.5em" />
           </a>
         </li>
         <li>
-          <a>
+          <a href="#">
             <Icon as={FaLinkedin} boxSize="1.5em" />
           </a>
         </li>

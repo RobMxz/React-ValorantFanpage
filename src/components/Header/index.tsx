@@ -9,24 +9,24 @@ const Header = () => {
           <Center>
             <CompoundList>
               <CompoundList.Item>
-                <a>Skins</a>
+                <a href="#">Skins</a>
               </CompoundList.Item>
               <CompoundList.Item>
-                <a>Buddies</a>
+                <a href="#">Buddies</a>
               </CompoundList.Item>
               <div className="trapecio">
                 <CompoundList.Item
                   className="item-three"
                   style={{ color: "black" }}
                 >
-                  <a>Home</a>
+                  <a href="#">Home</a>
                 </CompoundList.Item>
               </div>
               <CompoundList.Item>
-                <a>Agents</a>
+                <a href="#">Agents</a>
               </CompoundList.Item>
               <CompoundList.Item>
-                <a>Cards</a>
+                <a href="#">Cards</a>
               </CompoundList.Item>
             </CompoundList>
           </Center>

@@ -1,5 +1,6 @@
 import { Divider, Center, Spinner } from "@chakra-ui/react";
 import useValorantData from "../../hooks/useValorantData";
+import Curiosity from "./Curiosity/Curiosity";
 
 const Agents = () => {
   const { agents, isLoading, error } = useValorantData();
@@ -50,6 +51,7 @@ const Agents = () => {
                     }}
                   />
                 </div>
+                {/*Start (this must be a component)*/}
                 <div
                   className="AgentInfo"
                   style={{
@@ -110,6 +112,7 @@ const Agents = () => {
                   <Divider
                     borderColor={`${"#" + agent.backgroundGradientColors[0]}`}
                   ></Divider>
+
                   <div
                     className="prueba "
                     style={{ height: "calc(100% - 200px)" }}
@@ -129,27 +132,12 @@ const Agents = () => {
                       {agent.description}
                     </p>
                   </div>
-
+                  {/*End*/}
                   {agent.developerName !== agent.displayName && (
-                    <div className="Curiosity">
-                      <Divider
-                        borderColor={`${
-                          "#" + agent.backgroundGradientColors[0]
-                        }`}
-                      ></Divider>
-                      <p
-                        style={{
-                          position: "absolute",
-                          bottom: "16px",
-                          fontSize: "0.8em",
-                          alignItems: "center",
-                          alignContent: "center",
-                          color: `${"#" + agent.backgroundGradientColors[0]}`,
-                        }}
-                      >
-                        Nombre en la beta: {agent.developerName}
-                      </p>
-                    </div>
+                    <Curiosity
+                      color={agent.backgroundGradientColors[0]}
+                      name={agent.developerName}
+                    />
                   )}
                 </div>
               </div>

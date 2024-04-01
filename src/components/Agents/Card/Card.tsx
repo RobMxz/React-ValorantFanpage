@@ -1,7 +1,7 @@
 import Curiosity from "../Curiosity/Curiosity";
 import { Divider } from "@chakra-ui/react";
 import { Agent } from "../../../hooks/useValorantData";
-
+import CardImage from "./CardImage/CardImage";
 interface CardProps {
   agent: Agent;
 }
@@ -20,29 +20,11 @@ const Card = ({ agent }: CardProps) => {
         justifyContent: "center",
       }}
     >
-      <div
-        className="AgentImage"
-        style={{
-          width: "100%",
-          height: "100%",
-          alignContent: "center",
-        }}
-      >
-        <img
-          src={agent.fullPortrait}
-          alt={agent.displayName}
-          aspect-ratio={"16/9"}
-          width={"100%"}
-          height={"100%"}
-          style={{
-            margin: "0",
-            padding: "0",
-            filter: `drop-shadow(0px 0px 10px ${
-              "#" + agent.backgroundGradientColors[0]
-            }`,
-          }}
-        />
-      </div>
+      <CardImage
+        fullPortrait={agent.fullPortrait}
+        displayName={agent.displayName}
+        color={agent.backgroundGradientColors[0]}
+      />
       {/*Start (this must be a component)*/}
       <div
         className="AgentInfo"

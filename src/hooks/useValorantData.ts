@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface Agent {
+export interface Agent {
   uuid: string;
   displayName: string;
   description: string;

@@ -1,6 +1,7 @@
 import { Divider } from "@chakra-ui/react";
 import { Agent } from "../../../../hooks/useValorantData";
 import Curiosity from "../../Curiosity/Curiosity";
+import CardTitle from "../CardTitle/CardTitle";
 interface CardProps {
   agent: Agent;
 }
@@ -23,16 +24,7 @@ const CardInfo = ({ agent }: CardProps) => {
         position: "relative",
       }}
     >
-      <h1
-        style={{
-          fontSize: "3rem",
-          textAlign: "center",
-          textTransform: "uppercase",
-          letterSpacing: "0.15em",
-        }}
-      >
-        {agent.displayName}
-      </h1>
+      <CardTitle title={agent.displayName} />
       <Divider
         borderColor={`${"#" + agent.backgroundGradientColors[0]}`}
       ></Divider>
@@ -65,7 +57,7 @@ const CardInfo = ({ agent }: CardProps) => {
         borderColor={`${"#" + agent.backgroundGradientColors[0]}`}
       ></Divider>
 
-      <div className="prueba " style={{ height: "calc(100% - 200px)" }}>
+      <div style={{ height: "calc(100% - 200px)" }}>
         {agent.developerName == agent.displayName && (
           <div style={{ marginTop: "33px" }}></div>
         )}

@@ -14,6 +14,7 @@ import { Center, Divider } from "@chakra-ui/react";
 import Agents from "./components/Agents";
 import useValorantData from "./hooks/useValorantData";
 import Ability from "./components/Ability";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const router = createBrowserRouter([
   {
     path: "/",

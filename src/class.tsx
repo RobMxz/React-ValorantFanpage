@@ -45,12 +45,7 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-      <SpeedInsights />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 function Root() {
   const { pathname } = useLocation();
@@ -76,6 +71,7 @@ function AgentPage() {
               <Center>
                 <div>
                   <Ability agent={agent} />
+                  <SpeedInsights />
                 </div>
               </Center>
             )}

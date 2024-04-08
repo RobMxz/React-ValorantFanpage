@@ -1,6 +1,5 @@
 import "./App.css";
 import {
-  NavLink,
   Outlet,
   RouterProvider,
   createBrowserRouter,
@@ -14,8 +13,6 @@ import Footer from "./components/Footer";
 import { Center, Divider } from "@chakra-ui/react";
 import Agents from "./components/Agents";
 import useValorantData from "./hooks/useValorantData";
-import Card from "./components/Card/Card";
-import { TbHexagonLetterQ } from "react-icons/tb";
 import Ability from "./components/Ability";
 const router = createBrowserRouter([
   {

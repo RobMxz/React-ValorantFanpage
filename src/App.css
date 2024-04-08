@@ -53,6 +53,51 @@
   align-items: center;
   justify-content: center;
 }
+.contenedor2 {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0;
+  padding: 0;
+  margin: 4em 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+
+  justify-content: center;
+  text-align: center;
+}
+.Agent-Ability {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.ability {
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid white;
+  border-radius: 10px;
+  padding: 0 1em;
+  border-image: linear-gradient(180deg, white, #f0f0f0, white);
+  border-image-slice: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "xd";
+}
+
+.ability h1 {
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 1em 0;
+}
+.ability p {
+  font-size: 0.8em;
+}
+
 .trapecio {
   width: 280px;
   height: 60px;

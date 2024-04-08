@@ -19,7 +19,7 @@ const Header = () => {
                   className="item-three"
                   style={{ color: "black" }}
                 >
-                  <a href="#">Home</a>
+                  <a href="/">Home</a>
                 </CompoundList.Item>
               </div>
               <CompoundList.Item>

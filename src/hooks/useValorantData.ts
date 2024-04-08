@@ -22,9 +22,17 @@ export interface Agent {
   isBaseContent: boolean;
   role: Role;
   recruitmentData: null;
-  abilities: string[];
+  abilities: Ability[];
   voiceLine: null;
 }
+
+interface Ability {
+  displayName: string;
+  description: string;
+  slot: string;
+  displayIcon: string;
+}
+
 interface Role {
   uuid: string;
   displayName: string;

@@ -3,6 +3,7 @@ import useValorantData from "../../hooks/useValorantData";
 import Card from "../Card/Card";
 import { Divider } from "@chakra-ui/react";
 import Curiosity from "./Curiosity/Curiosity";
+import { NavLink } from "react-router-dom";
 const Agents = () => {
   const { agents, isLoading, error } = useValorantData();
   return (
@@ -20,20 +21,26 @@ const Agents = () => {
               <>
                 <div className="Image-Info">
                   <div className="AgentImage">
-                    <img
-                      src={agent.fullPortrait}
-                      alt={agent.displayName}
-                      style={{
-                        filter: `drop-shadow(0px 0px 10px ${
-                          "#" + agent.backgroundGradientColors[0]
-                        })`,
-                      }}
-                    />
+                    <NavLink
+                      to={`/${
+                        "Agent/" +
+                        agent.displayName.match(/[a-zA-Z]+/g)?.join("")
+                      }`}
+                    >
+                      <img
+                        src={agent.fullPortrait}
+                        alt={agent.displayName}
+                        style={{
+                          filter: `drop-shadow(0px 0px 10px ${
+                            "#" + agent.backgroundGradientColors[0]
+                          })`,
+                        }}
+                      />
+                    </NavLink>
                   </div>
                   <Card
                     className="AgentInfo"
                     style={{
-                      border: `2.5px solid #c7f458ff`,
                       borderImage: `linear-gradient(180deg,${
                         "#" + agent.backgroundGradientColors[0]
                       } , ${"#" + agent.backgroundGradientColors[2]}

@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       return response;
     },
     children: [
-      { index: true, element: <div>Hi</div> },
+      { index: true },
       {
         path: "Agent/:agentName",
         element: <AgentPage />,

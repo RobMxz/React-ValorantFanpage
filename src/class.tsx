@@ -14,6 +14,7 @@ import { Center, Divider } from "@chakra-ui/react";
 import Agents from "./components/Agents";
 import useValorantData from "./hooks/useValorantData";
 import Ability from "./components/Ability";
+import Skins from "./components/Skins";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
           return name;
         },
       },
+      { path: "Skins", element: <Skins /> },
     ],
   },
 ]);

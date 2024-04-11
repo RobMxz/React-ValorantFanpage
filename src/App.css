@@ -187,3 +187,38 @@
   height: 1.5em;
   aspect-ratio: 1/1;
 }
+.contenedorSkin {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto 100px auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 4em;
+  row-gap: 8em;
+
+  align-items: center;
+  justify-content: center;
+}
+.contenedorSkin h1 {
+  text-align: center;
+  font-family: "xd";
+}
+.SkinBox {
+  border: 5px inset aquamarine;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 450px;
+  max-height: 450px;
+  position: relative;
+  font-family: "xd";
+}
+
+.SkinBox h1 {
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 15px aquamarine;
+  line-height: 1.5;
+}

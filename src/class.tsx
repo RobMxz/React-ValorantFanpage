@@ -17,6 +17,7 @@ import Ability from "./components/Ability";
 import Skins from "./components/Skins";
 import useSkinsStore from "./store/skinsData";
 import React from "react";
+import SkinDetail from "./components/SkinDetail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -101,29 +102,12 @@ function SkinPage() {
   name = name.replace(/-/g, " ");
   return (
     <>
-      <div style={{ marginTop: "2em" }}>
-        <Center>
-          <div className="contenedorSkin">
-            {skins &&
-              skins.map((skin) => {
-                return (
-                  <React.Fragment key={skin.uuid}>
-                    {skin.displayName
-                      .toLowerCase()
-                      .includes(name.toLowerCase()) && (
-                      <>
-                        <div>
-                          <h1>{skin.displayName}</h1>
-                          <img src={skin.displayIcon} />
-                        </div>
-                      </>
-                    )}
-                  </React.Fragment>
-                );
-              })}
-          </div>
-        </Center>
-      </div>
+      {skins &&
+        skins.map((skin) => (
+          <React.Fragment key={skin.uuid}>
+            <SkinDetail skin={skin} name={name} />
+          </React.Fragment>
+        ))}
     </>
   );
 }

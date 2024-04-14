@@ -19,7 +19,7 @@ interface Chromas {
   displayIcon: string;
   fullRender: string;
   swatch: string;
-  streamVideo: string;
+  streamedVideo: string;
   assetPath: string;
 }
 
@@ -28,7 +28,7 @@ interface Levels {
   displayName: string;
   levelItem: string;
   displayIcon: string;
-  streamVideo: string;
+  streamedVideo: string;
   assetPath: string;
 }
 interface SkinsStore {

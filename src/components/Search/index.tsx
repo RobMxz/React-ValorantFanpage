@@ -10,11 +10,7 @@ type Inputs = {
 };
 const Search = ({ setSearch }: any) => {
   const [searchValue, setSearchValue] = useState("");
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>();
+  const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     navigate(`/Skins/${data.skinSearch}`);
   };

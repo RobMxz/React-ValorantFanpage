@@ -15,6 +15,8 @@ import Agents from "./components/Agents";
 import useValorantData from "./hooks/useValorantData";
 import Ability from "./components/Ability";
 import Skins from "./components/Skins";
+import useSkinsStore from "./store/skinsData";
+import React from "react";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,7 +42,19 @@ const router = createBrowserRouter([
           return name;
         },
       },
-      { path: "Skins", element: <Skins /> },
+      {
+        path: "Skins",
+        element: <Skins />,
+      },
+      {
+        path: "Skins/:skinName",
+        element: <SkinPage />,
+        async loader({ params }) {
+          let name = params.skinName;
+
+          return name;
+        },
+      },
     ],
   },
 ]);
@@ -77,6 +91,39 @@ function AgentPage() {
             )}
           </>
         ))}
+    </>
+  );
+}
+
+function SkinPage() {
+  const { skins } = useSkinsStore();
+  let name = useLoaderData() as string;
+  name = name.replace(/-/g, " ");
+  return (
+    <>
+      <div style={{ marginTop: "2em" }}>
+        <Center>
+          <div className="contenedorSkin">
+            {skins &&
+              skins.map((skin) => {
+                return (
+                  <React.Fragment key={skin.uuid}>
+                    {skin.displayName
+                      .toLowerCase()
+                      .includes(name.toLowerCase()) && (
+                      <>
+                        <div>
+                          <h1>{skin.displayName}</h1>
+                          <img src={skin.displayIcon} />
+                        </div>
+                      </>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+          </div>
+        </Center>
+      </div>
     </>
   );
 }

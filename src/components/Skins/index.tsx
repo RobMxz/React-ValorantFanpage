@@ -4,14 +4,12 @@ import Search from "../Search";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import useSkinsStore from "../../store/skinsData";
+import { NavLink } from "react-router-dom";
 const Skins = () => {
   const { skins, isLoading, error, fetchSkins } = useSkinsStore();
-
   useEffect(() => {
-    console.log("wa");
     fetchSkins();
   }, []);
-
   const [search, setSearch] = useState("");
   return (
     <>
@@ -28,7 +26,10 @@ const Skins = () => {
                 <React.Fragment key={skin.uuid}>
                   {skin.displayIcon &&
                     skinFirstWord != "Standard" &&
-                    skinFirstWord != "Random" && (
+                    skinFirstWord != "Random" &&
+                    skin.displayName
+                      .toLocaleLowerCase()
+                      .includes(search.toLocaleLowerCase()) && (
                       <Center>
                         <div
                           style={{
@@ -36,7 +37,10 @@ const Skins = () => {
                             height: "100%",
                           }}
                         >
-                          <Card className="SkinBox">
+                          <Card
+                            className="SkinBox"
+                            style={{ minWidth: "400px", minHeight: "445px" }}
+                          >
                             <Card.Header
                               style={{
                                 height: "120px",
@@ -58,14 +62,22 @@ const Skins = () => {
                               }}
                             >
                               <Center>
-                                <img
-                                  src={skin.displayIcon}
-                                  style={{
-                                    filter: "drop-shadow(5px 0px 5px #C6F6D5)",
-                                    height: "100px",
-                                    width: "420px",
-                                  }}
-                                />
+                                <NavLink
+                                  to={`/Skins/${skin.displayName
+                                    .match(/[a-zA-Z0-9]+/g)
+                                    ?.join("-")}`}
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <img
+                                    src={skin.displayIcon}
+                                    style={{
+                                      filter:
+                                        "drop-shadow(5px 0px 5px #C6F6D5)",
+                                      height: "100px",
+                                      width: "420px",
+                                    }}
+                                  />
+                                </NavLink>
                               </Center>
                             </Card.Content>
                           </Card>

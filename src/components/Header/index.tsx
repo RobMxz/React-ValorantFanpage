@@ -9,7 +9,7 @@ const Header = () => {
           <Center>
             <CompoundList>
               <CompoundList.Item>
-                <a href="/Skins/">Skins</a>
+                <a href="/Skins">Skins</a>
               </CompoundList.Item>
               <CompoundList.Item>
                 <a href="#">Buddies</a>

@@ -1,19 +1,31 @@
 import { Center, Divider, Spinner } from "@chakra-ui/react";
-import useValorantSkinsData from "../../hooks/useValorantSkinsData";
 import Card from "../Card/Card";
-
+import Search from "../Search";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import useSkinsStore from "../../store/skinsData";
 const Skins = () => {
-  const { skins, isLoading, error } = useValorantSkinsData();
+  const { skins, isLoading, error, fetchSkins } = useSkinsStore();
 
+  useEffect(() => {
+    console.log("wa");
+    fetchSkins();
+  }, []);
+
+  const [search, setSearch] = useState("");
   return (
     <>
+      <div style={{ marginTop: "2em" }}>
+        <Search setSearch={setSearch} />
+        <p>{search}</p>
+      </div>
       <Center>
         <div className="contenedorSkin">
           {skins &&
             skins.map((skin) => {
               let skinFirstWord = skin.displayName.split(" ")[0];
               return (
-                <>
+                <React.Fragment key={skin.uuid}>
                   {skin.displayIcon &&
                     skinFirstWord != "Standard" &&
                     skinFirstWord != "Random" && (
@@ -60,7 +72,7 @@ const Skins = () => {
                         </div>
                       </Center>
                     )}
-                </>
+                </React.Fragment>
               );
             })}
         </div>

@@ -15,7 +15,6 @@ const Skins = () => {
     <>
       <div style={{ marginTop: "2em" }}>
         <Search setSearch={setSearch} />
-        <p>{search}</p>
       </div>
       <Center>
         <div className="contenedorSkin">
@@ -31,36 +30,13 @@ const Skins = () => {
                       .toLocaleLowerCase()
                       .includes(search.toLocaleLowerCase()) && (
                       <Center>
-                        <div
-                          style={{
-                            width: "calc(100% - 2em)",
-                            height: "100%",
-                          }}
-                        >
-                          <Card
-                            className="SkinBox"
-                            style={{ minWidth: "400px", minHeight: "445px" }}
-                          >
-                            <Card.Header
-                              style={{
-                                height: "120px",
-                                paddingTop: "1em",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                display: "flex",
-                              }}
-                            >
-                              <h1 style={{ padding: "0 1em" }}>
-                                {skin.displayName}
-                              </h1>
+                        <div>
+                          <Card className="Box Skin">
+                            <Card.Header className="SkinHeader">
+                              <h1>{skin.displayName}</h1>
                             </Card.Header>
                             <Divider borderColor={"#C6F6D5"} />
-                            <Card.Content
-                              style={{
-                                height: "325px",
-                                alignContent: "center",
-                              }}
-                            >
+                            <Card.Content className="SkinContent">
                               <Center>
                                 <NavLink
                                   to={`/Skins/${skin.displayName
@@ -68,15 +44,7 @@ const Skins = () => {
                                     ?.join("-")}`}
                                   style={{ textDecoration: "none" }}
                                 >
-                                  <img
-                                    src={skin.displayIcon}
-                                    style={{
-                                      filter:
-                                        "drop-shadow(5px 0px 5px #C6F6D5)",
-                                      height: "100px",
-                                      width: "420px",
-                                    }}
-                                  />
+                                  <img src={skin.displayIcon} />
                                 </NavLink>
                               </Center>
                             </Card.Content>

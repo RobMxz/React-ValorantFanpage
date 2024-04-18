@@ -12,7 +12,7 @@ const Header = () => {
                 <a href="/Skins">Skins</a>
               </CompoundList.Item>
               <CompoundList.Item>
-                <a href="#">Buddies</a>
+                <a href="/Buddies">Buddies</a>
               </CompoundList.Item>
               <div className="trapecio">
                 <a href="/">
@@ -28,7 +28,7 @@ const Header = () => {
                 <a href="#">Agents</a>
               </CompoundList.Item>
               <CompoundList.Item>
-                <a href="#">Cards</a>
+                <a href="/Cards">Cards</a>
               </CompoundList.Item>
             </CompoundList>
           </Center>

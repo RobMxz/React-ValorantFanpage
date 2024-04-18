@@ -222,3 +222,92 @@
   text-shadow: 0 0 15px aquamarine;
   line-height: 1.5;
 }
+.Box {
+  border: 5px inset aquamarine;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  font-family: "xd";
+}
+.Box h1 {
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 15px aquamarine;
+  line-height: 1.5;
+}
+.ValoCard {
+  min-width: 400px;
+  min-height: 920px;
+}
+.ValoCardHeader {
+  height: 180px;
+  padding-top: 1em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.ValoCardHeader h1 {
+  padding: 0 1em;
+}
+
+.ValoCardContent {
+  height: 800px;
+  align-content: center;
+}
+.ValoCardContent img {
+  filter: drop-shadow(5px 0px 5px #c6f6d5);
+  width: 268px;
+  height: 640px;
+}
+.Buddy {
+  min-width: 400px;
+  min-height: 445px;
+}
+.BuddyHeader {
+  height: 120px;
+  padding-top: 1em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.Buddy h1 {
+  padding: 0 1em;
+}
+
+.BuddyContent {
+  height: 325px;
+  align-content: center;
+}
+.BuddyContent img {
+  filter: drop-shadow(5px 0px 5px #c6f6d5);
+  width: 192px;
+  height: 192px;
+}
+.Skin {
+  min-width: 400px;
+  min-height: 445px;
+}
+.SkinHeader {
+  height: 120px;
+  padding-top: 1em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.Skin h1 {
+  padding: 0 1em;
+}
+
+.SkinContent {
+  height: 325px;
+  align-content: center;
+}
+.SkinContent img {
+  filter: drop-shadow(5px 0px 5px #c6f6d5);
+  width: 420px;
+  height: 100px;
+}

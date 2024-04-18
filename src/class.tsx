@@ -18,6 +18,8 @@ import Skins from "./components/Skins";
 import useSkinsStore from "./store/skinsData";
 import React from "react";
 import SkinDetail from "./components/SkinDetail";
+import ValoCard from "./components/ValoCard";
+import Buddies from "./components/Buddies";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
 
           return name;
         },
+      },
+      {
+        path: "Cards",
+        element: <ValoCard />,
+      },
+      {
+        path: "Buddies",
+        element: <Buddies />,
       },
     ],
   },

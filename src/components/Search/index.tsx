@@ -26,7 +26,7 @@ const Search = ({ setSearch }: any) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Center>
           <Input
-            placeholder="Basic usage"
+            placeholder="Search ..."
             width="720px"
             size="lg"
             focusBorderColor="teal.500"

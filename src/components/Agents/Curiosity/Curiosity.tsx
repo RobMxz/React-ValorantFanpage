@@ -11,11 +11,6 @@ const Curiosity = ({ color, name }: CuriosityProps) => {
       <Divider borderColor={`${"#" + color}`}></Divider>
       <p
         style={{
-          position: "absolute",
-          bottom: "16px",
-          fontSize: "0.8em",
-          alignItems: "center",
-          alignContent: "center",
           color: `${"#" + color}`,
         }}
       >

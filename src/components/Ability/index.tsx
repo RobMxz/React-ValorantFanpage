@@ -17,14 +17,9 @@ const Ability = ({ agent }: AbilityProps) => {
   return (
     <>
       <div className="Agent-Ability">
-        <div className="AgentImage">
+        <div className="AgentImage-Ability">
           <h1
             style={{
-              textAlign: "center",
-              fontFamily: "xd",
-              marginTop: "2em",
-              fontSize: "2em",
-              textTransform: "uppercase",
               color: `${"#" + agent.backgroundGradientColors[0]}`,
             }}
           >
@@ -39,10 +34,6 @@ const Ability = ({ agent }: AbilityProps) => {
               filter: `drop-shadow(0px 0px 10px ${
                 "#" + agent.backgroundGradientColors[0]
               })`,
-              aspectRatio: "16/9",
-              width: "720px",
-              height: "540px",
-              marginBottom: "6em",
             }}
           />
         </div>
@@ -58,17 +49,10 @@ const Ability = ({ agent }: AbilityProps) => {
                     } , ${"#" + agent.backgroundGradientColors[2]}
         , ${"#" + agent.backgroundGradientColors[0]})`,
                     borderImageSlice: "1",
-                    minWidth: "280px",
                   }}
                 >
                   <Card.Header>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
+                    <div className="abilityTitle">
                       {ability.slot === "Ability1" && (
                         <Icon as={TbHexagonLetterQ} boxSize="2em" />
                       )}
@@ -93,20 +77,15 @@ const Ability = ({ agent }: AbilityProps) => {
                   <Card.SubTitle style={{ marginTop: "1em" }}>
                     <Center>
                       <img
+                        className="abilityImage"
                         src={ability.displayIcon}
                         style={{
-                          width: "100px",
-                          height: "100px",
-                          borderRadius: "50%",
-                          objectFit: "cover",
                           backgroundColor: `${
                             "#" + agent.backgroundGradientColors[1]
                           }`,
-                          padding: "10px",
                           filter: `drop-shadow(0px 0px 10px ${
                             "#" + agent.backgroundGradientColors[0]
                           })`,
-                          marginBottom: "1em",
                         }}
                       />
                     </Center>
@@ -114,13 +93,7 @@ const Ability = ({ agent }: AbilityProps) => {
                       borderColor={`${"#" + agent.backgroundGradientColors[0]}`}
                     />
                   </Card.SubTitle>
-                  <Card.Content
-                    style={{
-                      height: "calc(100% - 251px)",
-                      marginBottom: "1em",
-                    }}
-                    className="AgentDescription"
-                  >
+                  <Card.Content className="AbilityDescription">
                     <p>{ability.description}</p>
                   </Card.Content>
                 </Card>

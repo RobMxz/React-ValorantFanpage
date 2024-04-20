@@ -25,7 +25,7 @@ const Header = () => {
                 </a>
               </div>
               <CompoundList.Item>
-                <a href="#">Agents</a>
+                <a href="/Agents">Agents</a>
               </CompoundList.Item>
               <CompoundList.Item>
                 <a href="/Cards">Cards</a>

@@ -20,6 +20,7 @@ import React from "react";
 import SkinDetail from "./components/SkinDetail";
 import ValoCard from "./components/ValoCard";
 import Buddies from "./components/Buddies";
+import Home from "./components/Home";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     },
     children: [
       { index: true },
+      {
+        path: "Agents",
+        element: <Agents />,
+      },
       {
         path: "Agent/:agentName",
         element: <AgentPage />,
@@ -77,11 +82,13 @@ function Root() {
   const { pathname } = useLocation();
   return (
     <>
-      <Header />
-      {pathname === "/" && <Agents />}
-      <Outlet />
-      <Divider borderColor="green.300" size="full" variant="dashed" />
-      <Footer />
+      <div style={{}}>
+        <Header />
+        {pathname === "/" && <Home />}
+        <Outlet />
+        <Divider borderColor="green.300" size="full" variant="dashed" />
+        <Footer />
+      </div>
     </>
   );
 }

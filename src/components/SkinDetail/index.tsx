@@ -6,7 +6,7 @@ import {
   CloseButton,
   Stack,
 } from "@chakra-ui/react";
-import { Skins } from "../../hooks/useValorantSkinsData";
+import { Skins } from "../../models/Skin";
 import { useState } from "react";
 import { Button } from "@chakra-ui/react";
 

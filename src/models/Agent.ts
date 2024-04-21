@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-
 export interface Agent {
   uuid: string;
   displayName: string;
@@ -40,26 +37,3 @@ interface Role {
   displayIcon: string;
   assetPath: string;
 }
-
-const useEventsData = () => {
-  const [agents, setAgents] = useState<Agent[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | undefined | unknown>();
-  useEffect(() => {
-    try {
-      axios
-        .get(
-          "https://valorant-api.com/v1/agents?language=es-MX&isPlayableCharacter=true"
-        )
-        .then((response) => {
-          setAgents(response.data.data as Agent[]);
-        });
-      setIsLoading(false);
-    } catch (error) {
-      setError(error);
-    }
-  }, []);
-  return { agents: agents || [], isLoading, error };
-};
-
-export default useEventsData;

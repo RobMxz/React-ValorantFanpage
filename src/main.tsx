@@ -7,7 +7,7 @@ import App from "./class";
 
 import { ThemeProvider } from "./theme/ThemeProvider";
 
-localStorage.setItem("chakra-ui-color-mode", "system");
+localStorage.setItem("chakra-ui-color-mode", "dark");
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

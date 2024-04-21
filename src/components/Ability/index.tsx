@@ -1,5 +1,5 @@
 import { Center, Divider } from "@chakra-ui/react";
-import { Agent } from "../../hooks/useValorantData";
+import { Agent } from "../../models/Agent";
 import {
   TbHexagonLetterQ,
   TbHexagonLetterC,

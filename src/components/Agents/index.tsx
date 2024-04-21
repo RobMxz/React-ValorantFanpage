@@ -1,11 +1,16 @@
 import { Center, Spinner } from "@chakra-ui/react";
-import useValorantData from "../../hooks/useValorantData";
 import Card from "../Card/Card";
 import { Divider } from "@chakra-ui/react";
 import Curiosity from "./Curiosity/Curiosity";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import useAgentsStore from "../../store/agentsData";
 const Agents = () => {
-  const { agents, isLoading, error } = useValorantData();
+  const { agents, isLoading, error, fetchAgents } = useAgentsStore();
+  useEffect(() => {
+    fetchAgents();
+  }, []);
+
   return (
     <>
       <div

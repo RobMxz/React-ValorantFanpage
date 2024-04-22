@@ -8,6 +8,7 @@ import {
 } from "react-icons/tb";
 import { Icon } from "@chakra-ui/react";
 import Card from "../Card/Card";
+import React from "react";
 
 interface AbilityProps {
   agent: Agent;
@@ -39,7 +40,7 @@ const Ability = ({ agent }: AbilityProps) => {
         </div>
         <div className="contenedor2">
           {agent.abilities.map((ability) => (
-            <>
+            <React.Fragment key={`${agent.uuid + ability.displayName}`}>
               {ability.slot !== "Passive" && (
                 <Card
                   className="ability"
@@ -98,7 +99,7 @@ const Ability = ({ agent }: AbilityProps) => {
                   </Card.Content>
                 </Card>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>

@@ -13,7 +13,7 @@ const Buddies = () => {
   return (
     <>
       <div style={{ marginTop: "2em" }}>
-        <Search setSearch={setSearch} />
+        <Search setSearch={setSearch} searchEnable={false} />
       </div>
       <div className="contenedorSkin">
         {buddies &&

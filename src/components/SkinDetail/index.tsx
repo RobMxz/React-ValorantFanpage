@@ -7,7 +7,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Skins } from "../../models/Skin";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@chakra-ui/react";
 
 const SkinDetail = ({ skin, name }: { skin: Skins; name: string }) => {
@@ -57,24 +57,26 @@ const SkinDetail = ({ skin, name }: { skin: Skins; name: string }) => {
                 <div style={{ display: "flex", gap: "1em", margin: "1em" }}>
                   {skin.chromas &&
                     skin.chromas.slice(0).map((chroma) => (
-                      <div
-                        style={{
-                          border: "3px solid #BEE3F8",
-                          borderRadius: "5px",
-                        }}
-                      >
-                        {skin.chromas[0].displayIcon && (
-                          <>
-                            <img
-                              src={chroma.swatch}
-                              onClick={() => {
-                                setIcon(chroma.displayIcon);
-                              }}
-                              style={{ cursor: "pointer", maxWidth: "4em" }}
-                            />
-                          </>
-                        )}
-                      </div>
+                      <React.Fragment key={chroma.uuid}>
+                        <div
+                          style={{
+                            border: "3px solid #BEE3F8",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          {skin.chromas[0].displayIcon && (
+                            <>
+                              <img
+                                src={chroma.swatch}
+                                onClick={() => {
+                                  setIcon(chroma.displayIcon);
+                                }}
+                                style={{ cursor: "pointer", maxWidth: "4em" }}
+                              />
+                            </>
+                          )}
+                        </div>
+                      </React.Fragment>
                     ))}
                 </div>
               </Center>
@@ -133,20 +135,6 @@ const SkinDetail = ({ skin, name }: { skin: Skins; name: string }) => {
               </Center>
             </div>
           </div>
-          <p
-            style={{
-              margin: "0",
-              padding: "0",
-              height: "100%",
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "flex-end",
-              marginRight: "20px",
-              marginBottom: "20px",
-            }}
-          >
-            XD
-          </p>
         </>
       )}
     </>

@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import { Divider } from "@chakra-ui/react";
 import Curiosity from "./Curiosity/Curiosity";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import useAgentsStore from "../../store/agentsData";
 const Agents = () => {
   const { agents, isLoading, error, fetchAgents } = useAgentsStore();
@@ -23,7 +23,7 @@ const Agents = () => {
         {agents &&
           agents.map((agent) => {
             return (
-              <>
+              <React.Fragment key={agent.uuid}>
                 <div className="Image-Info">
                   <div className="AgentImage">
                     <NavLink
@@ -85,7 +85,7 @@ const Agents = () => {
                     )}
                   </Card>
                 </div>
-              </>
+              </React.Fragment>
             );
           })}
       </div>

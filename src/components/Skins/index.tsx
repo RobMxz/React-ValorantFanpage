@@ -14,7 +14,7 @@ const Skins = () => {
   return (
     <>
       <div style={{ marginTop: "2em" }}>
-        <Search setSearch={setSearch} />
+        <Search setSearch={setSearch} searchEnable={true} />
       </div>
       <Center>
         <div className="contenedorSkin">

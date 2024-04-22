@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Center, Divider } from "@chakra-ui/react";
+import { Divider } from "@chakra-ui/react";
 import Agents from "./components/Agents";
 import Ability from "./components/Ability";
 import Skins from "./components/Skins";
@@ -19,6 +19,7 @@ import ValoCard from "./components/ValoCard";
 import Buddies from "./components/Buddies";
 import Home from "./components/Home";
 import useAgentsStore from "./store/agentsData";
+import Error from "./components/Error";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,20 +84,18 @@ function Root() {
 function AgentPage() {
   const { agents } = useAgentsStore();
   const name = useLoaderData() as string;
+  const foundAgent = agents.find(
+    (agent) => agent.displayName.toLowerCase() === name.toLowerCase()
+  );
   return (
     <>
-      {agents &&
-        agents.map((agent) => (
-          <>
-            {name === agent.displayName.match(/[a-zA-Z]+/g)?.join("") && (
-              <Center>
-                <div>
-                  <Ability agent={agent} />
-                </div>
-              </Center>
-            )}
-          </>
-        ))}
+      {foundAgent ? (
+        <React.Fragment key={foundAgent.uuid}>
+          <Ability agent={foundAgent} />
+        </React.Fragment>
+      ) : (
+        <Error message="Ups este agente no existe :P" />
+      )}
     </>
   );
 }
@@ -105,14 +104,18 @@ function SkinPage() {
   const { skins } = useSkinsStore();
   let name = useLoaderData() as string;
   name = name.replace(/-/g, " ");
+  const foundSkin = skins.find(
+    (skin) => skin.displayName.toLowerCase() === name.toLowerCase()
+  );
   return (
     <>
-      {skins &&
-        skins.map((skin) => (
-          <React.Fragment key={skin.uuid}>
-            <SkinDetail skin={skin} name={name} />
-          </React.Fragment>
-        ))}
+      {foundSkin ? (
+        <React.Fragment key={foundSkin.uuid}>
+          <SkinDetail skin={foundSkin} name={name} />
+        </React.Fragment>
+      ) : (
+        <Error message="Ups esta búsqueda no es válida :)" />
+      )}
     </>
   );
 }

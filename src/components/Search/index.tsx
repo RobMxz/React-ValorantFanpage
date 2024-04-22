@@ -8,19 +8,30 @@ import { useEffect, useCallback, useState } from "react";
 type Inputs = {
   skinSearch: string;
 };
-const Search = ({ setSearch }: any) => {
+import React from "react";
+
+type SearchProps = {
+  setSearch: (value: string) => void;
+  searchEnable: boolean;
+};
+
+const Search: React.FC<SearchProps> = ({ setSearch, searchEnable }) => {
   const [searchValue, setSearchValue] = useState("");
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    navigate(`/Skins/${data.skinSearch}`);
+    navigate(
+      `${window.location.pathname}/${data.skinSearch
+        .match(/[a-zA-Z0-9]+/g)
+        ?.join("-")}`
+    );
   };
   useEffect(
     useCallback(() => {
-      console.log(searchValue);
       setSearch(searchValue);
     }, [searchValue, setSearch])
   );
   const navigate = useNavigate();
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -38,14 +49,16 @@ const Search = ({ setSearch }: any) => {
             letterSpacing="0.1em"
             onChange={(e) => setSearchValue(e.target.value)}
           />
-          <IconButton
-            type="submit"
-            aria-label="Search database"
-            icon={<SearchIcon />}
-            style={{ marginLeft: "1em" }}
-            size="lg"
-            colorScheme="teal"
-          />
+          {searchEnable && (
+            <IconButton
+              type="submit"
+              aria-label="Search database"
+              icon={<SearchIcon />}
+              style={{ marginLeft: "1em" }}
+              size="lg"
+              colorScheme="teal"
+            />
+          )}
         </Center>
       </form>
     </>

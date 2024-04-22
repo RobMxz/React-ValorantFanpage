@@ -81,4 +81,5 @@ const abilityData: Agent = {
 };
 test(Ability, () => {
   const result = render(<Ability agent={abilityData} />);
+  console.log(result);
 });

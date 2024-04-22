@@ -131,4 +131,5 @@ test(SkinDetail, () => {
   let result = render(
     <SkinDetail skin={skinData} name="RGX 11z Pro Phantom" />
   );
+  console.log(result);
 });

@@ -5,7 +5,7 @@ const Home = () => {
         <img
           src="https://4kwallpapers.com/images/wallpapers/valorant-girls-3440x1440-14812.jpg"
           alt="Valorant"
-          width="100%"
+          width={"100%"}
           height="100%"
           style={{
             objectFit: "cover",

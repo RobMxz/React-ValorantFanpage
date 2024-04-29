@@ -13,7 +13,7 @@ import Agents from "./components/Agents";
 import Ability from "./components/Ability";
 import Skins from "./components/Skins";
 import useSkinsStore from "./store/skinsData";
-import React from "react";
+import React, { useEffect } from "react";
 import SkinDetail from "./components/SkinDetail";
 import ValoCard from "./components/ValoCard";
 import Buddies from "./components/Buddies";
@@ -82,8 +82,12 @@ function Root() {
   );
 }
 function AgentPage() {
-  const { agents } = useAgentsStore();
-  const name = useLoaderData() as string;
+  const { agents, fetchAgents } = useAgentsStore();
+  useEffect(() => {
+    fetchAgents();
+  }, []);
+  let name = useLoaderData() as string;
+  name = name.replace(/-/g, "/");
   const foundAgent = agents.find(
     (agent) => agent.displayName.toLowerCase() === name.toLowerCase()
   );
@@ -101,7 +105,10 @@ function AgentPage() {
 }
 
 function SkinPage() {
-  const { skins } = useSkinsStore();
+  const { skins, fetchSkins } = useSkinsStore();
+  useEffect(() => {
+    fetchSkins();
+  }, []);
   let name = useLoaderData() as string;
   name = name.replace(/-/g, " ");
   const foundSkin = skins.find(

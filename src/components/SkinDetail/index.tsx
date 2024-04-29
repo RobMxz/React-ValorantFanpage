@@ -52,11 +52,11 @@ const SkinDetail = ({ skin, name }: { skin: Skins; name: string }) => {
                 width: "25em",
               }}
             >
-              {" "}
-              <Center>
-                <div style={{ display: "flex", gap: "1em", margin: "1em" }}>
-                  {skin.chromas &&
-                    skin.chromas.slice(0).map((chroma) => (
+              {""}
+              {skin.chromas.length > 1 && (
+                <Center>
+                  <div style={{ display: "flex", gap: "1em", margin: "1em" }}>
+                    {skin.chromas.slice(0).map((chroma) => (
                       <React.Fragment key={chroma.uuid}>
                         <div
                           style={{
@@ -78,12 +78,13 @@ const SkinDetail = ({ skin, name }: { skin: Skins; name: string }) => {
                         </div>
                       </React.Fragment>
                     ))}
-                </div>
-              </Center>
+                  </div>
+                </Center>
+              )}
               <Center>
-                <Stack spacing={3} width={"70%"}>
+                <Stack spacing={3} width={"80%"} marginBottom={"2"}>
                   {skin.levels.map((level, index) => (
-                    <div key={level.displayName} style={{ width: "90%" }}>
+                    <div key={level.displayName} style={{ width: "100%" }}>
                       <Center>
                         {openAlerts[index] ? (
                           <Alert>
@@ -92,7 +93,7 @@ const SkinDetail = ({ skin, name }: { skin: Skins; name: string }) => {
                                 <video
                                   loop
                                   autoPlay
-                                  style={{ maxWidth: "200px" }}
+                                  style={{ maxWidth: "100%" }}
                                 >
                                   <source
                                     src={level.streamedVideo}
@@ -125,7 +126,7 @@ const SkinDetail = ({ skin, name }: { skin: Skins; name: string }) => {
                             _hover={{ borderColor: "teal.500" }}
                             border={"2px solid "}
                           >
-                            {level.displayName}
+                            {skin.displayName} - {`Level ${index}`}
                           </Button>
                         )}
                       </Center>

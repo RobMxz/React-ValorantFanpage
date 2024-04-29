@@ -16,17 +16,23 @@ export const FooterList = () => {
           <a href="#">Terms of Service</a>
         </li>
         <li>
-          <a href="#">
+          <a
+            href="https://discordapp.com/users/393511896868847628"
+            target="_blank"
+          >
             <Icon as={IoLogoDiscord} boxSize="1.5em" />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="https://github.com/RobMxz" target="_blank">
             <Icon as={FaGithub} boxSize="1.5em" />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a
+            href="https://www.linkedin.com/in/roberto-paolo-palacios-chavez-67402124b/"
+            target="_blank"
+          >
             <Icon as={FaLinkedin} boxSize="1.5em" />
           </a>
         </li>

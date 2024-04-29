@@ -40,7 +40,7 @@ const Skins = () => {
                               <Center>
                                 <NavLink
                                   to={`/Skins/${skin.displayName
-                                    .match(/[a-zA-Z0-9]+/g)
+                                    .match(/[a-zA-Z0-9'".:!]+/g)
                                     ?.join("-")}`}
                                   style={{ textDecoration: "none" }}
                                 >

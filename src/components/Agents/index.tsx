@@ -29,7 +29,7 @@ const Agents = () => {
                     <NavLink
                       to={`/${
                         "Agent/" +
-                        agent.displayName.match(/[a-zA-Z]+/g)?.join("")
+                        agent.displayName.match(/[a-zA-Z]+/g)?.join("-")
                       }`}
                     >
                       <img

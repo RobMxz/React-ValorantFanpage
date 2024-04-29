@@ -4,7 +4,7 @@ import { Center } from "@chakra-ui/react";
 const Header = () => {
   return (
     <>
-      <header className="header" style={{ padding: "0 24rem" }}>
+      <header className="header">
         <div className="trapecio-principal">
           <Center>
             <CompoundList>

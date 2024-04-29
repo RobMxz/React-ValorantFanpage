@@ -28,7 +28,7 @@ const Agents = () => {
                   <div className="AgentImage">
                     <NavLink
                       to={`/${
-                        "Agent/" +
+                        "Agents/" +
                         agent.displayName.match(/[a-zA-Z]+/g)?.join("-")
                       }`}
                     >

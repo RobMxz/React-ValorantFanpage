@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <Agents />,
       },
       {
-        path: "Agent/:agentName",
+        path: "Agents/:agentName",
         element: <AgentPage />,
         async loader({ params }) {
           let name = params.agentName;

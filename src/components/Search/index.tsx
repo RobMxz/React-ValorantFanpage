@@ -18,6 +18,7 @@ type SearchProps = {
 const Search: React.FC<SearchProps> = ({ setSearch, searchEnable }) => {
   const [searchValue, setSearchValue] = useState("");
   const { register, handleSubmit } = useForm<Inputs>();
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     navigate(
       `${window.location.pathname}/${data.skinSearch
@@ -30,7 +31,6 @@ const Search: React.FC<SearchProps> = ({ setSearch, searchEnable }) => {
       setSearch(searchValue);
     }, [searchValue, setSearch])
   );
-  const navigate = useNavigate();
 
   return (
     <>
